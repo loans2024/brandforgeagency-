@@ -11,7 +11,7 @@ export default function Header() {
     <header className="bg-gray-100 text-black p-5">
       <nav className="w-full flex justify-between items-center">
         <div className="flex items-center text-xl font-bold font-poppins">
-          <Image src="/N.png" alt="Logo" width={24} height={24} className="mr-2" />  
+          <Image src="/N.png" alt="Logo" width={35} height={29} className="mr-2" />  
           <Link href="/">Brand Forge Agency</Link>
         </div>
         {/* Desktop Navigation */}
