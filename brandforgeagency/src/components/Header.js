@@ -8,8 +8,8 @@ export default function Header() {
   const toggleMenu = () => setMenuOpen(!menuOpen);
 
   return (
-    <header className="bg-gray-50 text-black p-5">
-      <nav className="container mx-auto flex justify-between items-center">
+    <header className="bg-gray-100 text-black p-5">
+      <nav className="w-full flex justify-between items-center">
         <div className="text-xl font-bold font-poppins">
           <a href="/">Brand Forge Agency</a>
         </div>
