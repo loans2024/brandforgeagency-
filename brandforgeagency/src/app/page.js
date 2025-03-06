@@ -4,6 +4,12 @@
 import { useState } from "react";
 import Link from 'next/link';
 import SlidingImage from '../components/SlidingImage';
+import { Playfair_Display } from 'next/font/google';
+
+const playfair = Playfair_Display({
+  subsets: ['latin'],
+  weight: ['900', '900'],
+});
 
 export default function Home() {
   const [submitted, setSubmitted] = useState(false);
@@ -28,6 +34,7 @@ export default function Home() {
     }
   };
 
+
   return (
     <>
       {/* Hero Section */}
@@ -35,7 +42,7 @@ export default function Home() {
         <div className="flex flex-col md:flex-row items-center">
           {/* Text container with sliding effect on desktops/laptops */}
           <div className="md:w-1/2 animate-slide-in-left">
-            <h1 className="text-5xl md:text-6xl font-[poppins] text-gray-800">
+            <h1 className={`${playfair.className} text-5xl md:text-6xl text-black`}>
               Elevate Your Brand with Digital Excellence
             </h1>
             <p className="mt-4 text-xl text-black font-[poppins]">
@@ -44,7 +51,7 @@ export default function Home() {
             <div className="mt-8">
               <Link
                 href="/services"
-                className="inline-block bg-blue-600 text-white px-9 py-3 rounded-md font-bold [poppins] hover:bg-blue-700 transition"
+                className={`${playfair.className} inline-block bg-blue-600 text-white px-9 py-3 rounded-md font-bold  hover:bg-blue-700 transition`}
               >
                 Discover Our Services
               </Link>
@@ -60,70 +67,70 @@ export default function Home() {
       {/* Services Section */}
       <section className="py-16 bg-white relative left-1/2 -translate-x-1/2 w-screen">
         <div className="w-full">
-          <h2 className="text-4xl font-[poppins] text-center text-black">Our Expertise</h2>
+          <h2 className={`${playfair.className} text-5xl md:text-1xl text-black text-center`}>Our Expertise</h2>
           <p className="mt-4 text-center text-black font-[poppins] text-2xl">
             We offer a full spectrum of services to boost your digital presence
           </p>
           <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Social Media Management */}
             <div className="bg-gray-700 p-6 rounded-lg shadow-md hover:shadow-xl transition">
-              <h3 className="text-3xl font-[poppins] text-white">Social Media Management</h3>
+              <h3 className={`${playfair.className} text-3xl text-white`}>Social Media Management</h3>
               <p className="mt-2 text-white font-[poppins] text-1xl">
                 Boost your online presence and engage your audience across platforms
               </p>
             </div>
             {/* Graphic Design */}
             <div className="bg-gray-700 p-6 rounded-lg shadow-md hover:shadow-xl transition">
-              <h3 className="text-3xl font-[poppins] text-white">Graphic Design</h3>
+              <h3 className={`${playfair.className} text-3xl text-white`}>Graphic Design</h3>
               <p className="mt-2 text-white font-[poppins] text-1xl">
                 Transform your brand identity with innovative visual designs.
               </p>
             </div>
             {/* Video Editing */}
             <div className="bg-gray-700 p-6 rounded-lg shadow-md hover:shadow-xl transition">
-              <h3 className="text-3xl font-[poppins] text-white">Video Editing</h3>
+              <h3 className={`${playfair.className} text-3xl text-white`}>Video Editing</h3>
               <p className="mt-2 text-white font-[poppins] text-1xl">
                 Enhance your visual content with professional video editing.
               </p>
             </div>
             {/* Reels Creation */}
             <div className="bg-gray-700 p-6 rounded-lg shadow-md hover:shadow-xl transition">
-              <h3 className="text-3xl font-[poppins] text-white">Reels Creation</h3>
+              <h3 className={`${playfair.className} text-3xl text-white`}>Reels Creation</h3>
               <p className="mt-2 text-white font-[poppins] text-1xl">
                 Create engaging short-form videos to capture your audience’s attention.
               </p>
             </div>
             {/* Content Creation */}
             <div className="bg-gray-700 p-6 rounded-lg shadow-md hover:shadow-xl transition">
-              <h3 className="text-3xl font-[poppins] text-white">Content Creation</h3>
+              <h3 className={`${playfair.className} text-3xl text-white`}>Content Creation</h3>
               <p className="mt-2 text-white font-[poppins] text-1xl">
                 Develop compelling content tailored to build trust and authority.
               </p>
             </div>
             {/* Copy Writing */}
             <div className="bg-gray-700 p-6 rounded-lg shadow-md hover:shadow-xl transition">
-              <h3 className="text-3xl font-[poppins] text-white">Copy Writing</h3>
+              <h3 className={`${playfair.className} text-3xl text-white`}>Copy Writing</h3>
               <p className="mt-2 text-white font-[poppins] text-1xl">
                 Craft persuasive copy that elevates your brand and drives conversions.
               </p>
             </div>
             {/* Community Engagement */}
             <div className="bg-gray-700 p-6 rounded-lg shadow-md hover:shadow-xl transition">
-              <h3 className="text-3xl font-[poppins] text-white">Community Engagement</h3>
+              <h3 className={`${playfair.className} text-3xl text-white`}>Community Engagement</h3>
               <p className="mt-2 text-white font-[poppins] text-1xl">
                 Build strong relationships with your audience through active engagement.
               </p>
             </div>
             {/* Strategy & Growth */}
             <div className="bg-gray-700 p-6 rounded-lg shadow-md hover:shadow-xl transition">
-              <h3 className="text-3xl font-[poppins] text-white">Strategy & Growth</h3>
+              <h3 className={`${playfair.className} text-3xl text-white`}>Strategy & Growth</h3>
               <p className="mt-2 text-white font-[poppins] text-1xl">
                 Implement data-driven strategies to accelerate your business growth.
               </p>
             </div>
             {/* Software Engineering */}
             <div className="bg-gray-700 p-6 rounded-lg shadow-md hover:shadow-xl transition">
-              <h3 className="text-3xl font-[poppins] text-white">Software Engineering</h3>
+              <h3 className={`${playfair.className} text-3xl text-white`}>Software Engineering</h3>
               <p className="mt-2 text-white font-[poppins] text-1xl">
                 Develop robust and scalable software solutions tailored to your needs.
               </p>
@@ -137,8 +144,8 @@ export default function Home() {
         <div className="w-full flex flex-col md:flex-row items-center">
           {/* Left Column: Form */}
           <div className="w-full md:w-1/2 p-4">
-            <h2 className="text-4xl font-[poppins] text-center md:text-left text-black mb-8">
-              I want to hire
+            <h2 className={`${playfair.className} text-3xl text-black`}>
+              Hire Us!
             </h2>
             {submitted ? (
               <div className="w-full max-w-2xl bg-white p-2 rounded-lg shadow-md text-center">
@@ -248,7 +255,7 @@ export default function Home() {
                 <div>
                   <button
                     type="submit"
-                    className="w-full bg-blue-600 text-white px-6 py-3 rounded-md font-bold hover:bg-blue-700 transition font-[poppins]"
+                    className={`${playfair.className} w-full bg-blue-600 text-white px-6 py-3 rounded-md font-bold hover:bg-blue-700 transition`}
                   >
                     Get Free Consultation
                   </button>
@@ -267,14 +274,14 @@ export default function Home() {
       <section className="py-16 bg-gray-50 relative left-1/2 -translate-x-[49%] w-screen">
         <div className="w-full flex flex-col md:flex-row items-center">
           <div className="md:w-1/2">
-            <h2 className="text-4xl font-[poppins] text-gray-800">Who We Are</h2>
+            <h2 className={`${playfair.className} text-4xl text-black p-3`}>Who We Are</h2>
             <p className="mt-4 text-lg text-black font-[poppins]">
               We blend creativity with technology. Our dedicated team of experts provides integrated digital solutions—from virtual assistance and branding to full‑stack software engineering—to ensure your brand stands out.
             </p>
             <div className="mt-6">
               <Link
                 href="/about"
-                className="inline-block bg-blue-600 text-white px-6 py-3 rounded-md font-[poppins] hover:bg-blue-700 transition"
+                className={`${playfair.className} inline-block bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700 transition`}
               >
                 Learn More About Us
               </Link>
@@ -293,14 +300,14 @@ export default function Home() {
       {/* Call-to-Action Section */}
       <section className="py-16 bg-gray-100 relative left-1/2 -translate-x-1/2 w-screen">
         <div className="w-full text-center">
-          <h2 className="text-4xl font-[poppins] text-black">Ready to Elevate Your Brand?</h2>
+          <h2 className={`${playfair.className} text-4xl text-black`}>Ready to Elevate Your Brand?</h2>
           <p className="mt-4 text-lg font-[poppins] text-black">
             Contact us today and let's create something extraordinary together
           </p>
           <div className="mt-8">
             <Link
               href="/contact"
-              className="inline-block bg-white text-blue-600 px-8 py-3 rounded-md font-[poppins] hover:bg-gray-100 transition"
+              className={`${playfair.className} inline-block bg-white text-blue-600 px-8 py-3  hover:bg-gray-100 transition`}
             >
               Get In Touch
             </Link>

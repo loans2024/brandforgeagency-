@@ -2,6 +2,12 @@
 import Image from 'next/image';
 import { useState } from 'react';
 import Link from 'next/link';
+import { Playfair_Display } from 'next/font/google';
+
+const playfair = Playfair_Display({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+});
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -12,27 +18,30 @@ export default function Header() {
       <nav className="w-full flex justify-between items-center">
         <div className="flex items-center text-xl font-bold font-poppins">
           <Image src="/n.png" alt="Logo" width={35} height={29} priority unoptimized className="mr-2"/>  
-          <Link href="/">Brand Forge Agency</Link>
+          <Link href="/" className={`${playfair.className} text-xl font-bold`}>
+          Brand Forge Agency
+          </Link>
+  
         </div>
         {/* Desktop Navigation */}
         <ul className="hidden md:flex space-x-35 font-poppins">
           <li>
-            <Link href="/" className="hover:underline">Home</Link>
+            <Link href="/" className={`${playfair.className} hover:underline font-bold`}>Home</Link>
           </li>
           <li>
-            <Link href="/about" className="hover:underline">About</Link>
+            <Link href="/about" className={`${playfair.className} hover:underline font-bold`}>About</Link>
           </li>
           <li>
-            <Link href="/services" className="hover:underline">Services</Link>
+            <Link href="/services" className={`${playfair.className} hover:underline font-bold`}>Services</Link>
           </li>
           <li>
-            <Link href="/the-team" className="hover:underline">The Team</Link>
+            <Link href="/the-team" className={`${playfair.className} hover:underline font-bold`}>The Team</Link>
           </li>
           <li>
-            <Link href="/blog" className="hover:underline">Blog</Link>
+            <Link href="/blog" className={`${playfair.className} hover:underline font-bold`}>Blog</Link>
           </li>
           <li>
-            <Link href="/contact" className="hover:underline">Contact</Link>
+            <Link href="/contact" className={`${playfair.className} hover:underline font-bold`}>Contact</Link>
           </li>
         </ul>
         {/* Hamburger Menu Icon for Mobile */}

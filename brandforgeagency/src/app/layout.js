@@ -1,4 +1,10 @@
 // src/app/layout.js
+import { Playfair_Display } from 'next/font/google';
+
+const playfair = Playfair_Display({
+  subsets: ['latin'],
+  weight: ['400', '700'], // or whichever weights you need
+});
 import './globals.css';
 import Header from '../components/Header';
 
@@ -38,7 +44,7 @@ export default function RootLayout({ children }) {
       <body className="bg-white text-gray-900">
         <Header />
         <main className="w-full">{children}</main>
-        <footer className="bg-gray-300 text-black p-4 text-center font-poppins">
+        <footer className={`${playfair.className} bg-gray-300 text-black p-4 font-bold text-center`}>
           © {new Date().getFullYear()} Brand Forge Agency. All rights reserved.
         </footer>
       </body>
