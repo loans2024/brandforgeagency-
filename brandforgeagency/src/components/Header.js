@@ -1,7 +1,7 @@
-// src/components/Header.js
 "use client";
-
+import Image from 'next/image';
 import { useState } from 'react';
+import Link from 'next/link';
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -11,28 +11,28 @@ export default function Header() {
     <header className="bg-gray-100 text-black p-5">
       <nav className="w-full flex justify-between items-center">
         <div className="flex items-center text-xl font-bold font-poppins">
-          <img src="/N.png" alt="Logo" className="h-11 w-14 mr-1" />
-          <a href="/">Brand Forge Agency</a>
+          <Image src="/N.png" alt="Logo" width={24} height={24} className="mr-2" />  
+          <Link href="/">Brand Forge Agency</Link>
         </div>
         {/* Desktop Navigation */}
         <ul className="hidden md:flex space-x-35 font-poppins">
           <li>
-            <a href="/" className="hover:underline">Home</a>
+            <Link href="/" className="hover:underline">Home</Link>
           </li>
           <li>
-            <a href="/about" className="hover:underline">About</a>
+            <Link href="/about" className="hover:underline">About</Link>
           </li>
           <li>
-            <a href="/services" className="hover:underline">Services</a>
+            <Link href="/services" className="hover:underline">Services</Link>
           </li>
           <li>
-            <a href="/the-team" className="hover:underline">The Team</a>
+            <Link href="/the-team" className="hover:underline">The Team</Link>
           </li>
           <li>
-            <a href="/blog" className="hover:underline">Blog</a>
+            <Link href="/blog" className="hover:underline">Blog</Link>
           </li>
           <li>
-            <a href="/contact" className="hover:underline">Contact</a>
+            <Link href="/contact" className="hover:underline">Contact</Link>
           </li>
         </ul>
         {/* Hamburger Menu Icon for Mobile */}
@@ -60,22 +60,22 @@ export default function Header() {
         <div className="md:hidden mt-3 bg-black-50 p-3 rounded-lg shadow-lg -mx-5">
           <ul className="flex flex-col space-y-3 font-poppins">
             <li className="p-3 bg-gray-200 rounded">
-              <a href="/" className="block hover:underline">Home</a>
+              <Link href="/" className="block hover:underline">Home</Link>
             </li>
             <li className="p-2 bg-gray-200 rounded">
-              <a href="/about" className="block hover:underline">About</a>
+              <Link href="/about" className="block hover:underline">About</Link>
             </li>
             <li className="p-2 bg-gray-200 rounded">
-              <a href="/services" className="block hover:underline">Services</a>
+              <Link href="/services" className="block hover:underline">Services</Link>
             </li>
             <li className="p-2 bg-gray-200 rounded">
-              <a href="/the-team" className="block hover:underline">The Team</a>
+              <Link href="/the-team" className="block hover:underline">The Team</Link>
             </li>
             <li className="p-2 bg-gray-200 rounded">
-              <a href="/blog" className="block hover:underline">Blog</a>
+              <Link href="/blog" className="block hover:underline">Blog</Link>
             </li>
             <li className="p-2 bg-gray-200 rounded">
-              <a href="/contact" className="block hover:underline">Contact</a>
+              <Link href="/contact" className="block hover:underline">Contact</Link>
             </li>
           </ul>
         </div>
