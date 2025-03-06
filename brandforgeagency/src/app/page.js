@@ -282,7 +282,7 @@ export default function Home() {
           </div>
           <div className="md:w-1/2 mt-8 md:mt-0">
             <img
-              src="/N.png"
+              src="/n.png"
               alt="Brand Forge Agency"
               className="w-full max-h-60 object-contain rounded-lg shadow-md"
             />
