@@ -37,8 +37,8 @@ export default function RootLayout({ children }) {
       <head />
       <body className="bg-white text-gray-900">
         <Header />
-        <main className="container mx-auto p-">{children}</main>
-        <footer className="bg-gray-800 text-white p-4 text-center font-poppins">
+        <main className="w-full">{children}</main>
+        <footer className="bg-gray-300 text-black p-4 text-center font-poppins">
           © {new Date().getFullYear()} Brand Forge Agency. All rights reserved.
         </footer>
       </body>

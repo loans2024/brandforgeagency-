@@ -10,7 +10,8 @@ export default function Header() {
   return (
     <header className="bg-gray-100 text-black p-5">
       <nav className="w-full flex justify-between items-center">
-        <div className="text-xl font-bold font-poppins">
+        <div className="flex items-center text-xl font-bold font-poppins">
+          <img src="/N.png" alt="Logo" className="h-11 w-14 mr-1" />
           <a href="/">Brand Forge Agency</a>
         </div>
         {/* Desktop Navigation */}

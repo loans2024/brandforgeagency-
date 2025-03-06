@@ -1,8 +1,31 @@
-// src/app/page.js
+"use client";
+import { useState } from "react";
 import Link from 'next/link';
 import SlidingImage from '../components/SlidingImage';
 
 export default function Home() {
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    try {
+      const res = await fetch("https://formspree.io/f/mblgrdzl", {
+        method: "POST",
+        headers: { Accept: "application/json" },
+        body: formData,
+      });
+      if (res.ok) {
+        setSubmitted(true);
+      } else {
+        alert("There was an error submitting the form. Please try again.");
+      }
+    } catch (error) {
+      console.error(error);
+      alert("There was an error submitting the form. Please try again.");
+    }
+  };
+
   return (
     <>
       {/* Hero Section */}
@@ -107,134 +130,149 @@ export default function Home() {
         </div>
       </section>
 
-    {/* Hire a Virtual Assistant Form */}
-    <section className="py-1 bg-gray-100 w-screen">
+      {/* Hire a Virtual Assistant Form */}
+      <section className="py-1 bg-gray-100 w-screen mx-0">
         <div className="w-full flex flex-col md:flex-row items-center">
           {/* Left Column: Form */}
           <div className="w-full md:w-1/2 p-4">
             <h2 className="text-4xl font-[poppins] text-center md:text-left text-black mb-8">
               I want to hire
             </h2>
-            <form className="w-full max-w-2xl bg-white p-8 rounded-lg shadow-md">
-              {/* Role Dropdown Field at the Top */}
-              <div className="mb-6 relative">
-                <label className="block text-gray-700 text-lg font-[poppins] mb-2">
-                  Select a Role
-                </label>
-                <div className="relative">
-                  <span className="absolute inset-y-0 left-0 flex items-center pl-3">
-                    {/* (Optional icon can be placed here) */}
-                  </span>
-                  <select className="w-full border border-gray-300 p-3 pl-10 rounded-md appearance-none focus:outline-none focus:ring-2 focus:ring-blue-500 font-[poppins]">
-                    <option>Virtual Assistant</option>
-                    <option>Social Media Management</option>
-                    <option>Graphic Design</option>
-                    <option>Video Editing</option>
-                    <option>Reels Creation</option>
-                    <option>Content Creation</option>
-                    <option>Copy Writing</option>
-                    <option>Community Engagement</option>
-                    <option>Strategy & Growth</option>
-                    <option>Software Engineering</option>
-                  </select>
-                  <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3 text-gray-700">
-                    <svg className="fill-current h-4 w-4" viewBox="0 0 20 20">
-                      <path d="M5.516 7.548l4.484 4.484 4.484-4.484L16 8.548l-6 6-6-6z" />
-                    </svg>
+            {submitted ? (
+              <div className="w-full max-w-2xl bg-white p-2 rounded-lg shadow-md text-center">
+                <h2 className="text-2xl font-bold text-blue-900">Thank You!</h2>
+                <p className="mt-4 text-lg text-black font-[poppins]">
+                  Your submission has been received.
+                </p>
+              </div>
+            ) : (
+              <form 
+                action="https://formspree.io/f/mblgrdzl" 
+                method="POST" 
+                onSubmit={handleSubmit}
+                className="w-full max-w-2xl bg-white p-2 rounded-lg shadow-md"
+              >
+                {/* Role Dropdown Field at the Top */}
+                <div className="mb-6 relative">
+                  <label className="block text-gray-700 text-lg font-[poppins] mb-2">
+                    Select a Role
+                  </label>
+                  <div className="relative">
+                    <span className="absolute inset-y-0 left-0 flex items-center pl-3">
+                      {/* (Optional icon can be placed here) */}
+                    </span>
+                    <select 
+                      name="role"
+                      className="w-full border border-gray-300 p-3 pl-10 rounded-md appearance-none focus:outline-none focus:ring-2 focus:ring-blue-500 font-[poppins]"
+                    >
+                      <option>Virtual Assistant</option>
+                      <option>Social Media Management</option>
+                      <option>Graphic Design</option>
+                      <option>Video Editing</option>
+                      <option>Reels Creation</option>
+                      <option>Content Creation</option>
+                      <option>Copy Writing</option>
+                      <option>Community Engagement</option>
+                      <option>Strategy & Growth</option>
+                      <option>Software Engineering</option>
+                    </select>
+                    <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3 text-gray-700">
+                      <svg className="fill-current h-4 w-4" viewBox="0 0 20 20">
+                        <path d="M5.516 7.548l4.484 4.484 4.484-4.484L16 8.548l-6 6-6-6z" />
+                      </svg>
+                    </div>
                   </div>
                 </div>
-              </div>
-              {/* Name Field */}
-              <div className="mb-4 relative">
-                <label className="block text-gray-700 text-lg font-[poppins] mb-2">
-                  Name
-                </label>
-                <span className="absolute inset-y-0 left-0 flex items-center pl-3">
-                  {/* User Icon */}
-                  <img src="/name.png" alt="User Icon" className="h-7 w-7 mt-9" />
-                </span>
-                <input
-                  type="text"
-                  placeholder="Your Name"
-                  className="w-full border border-gray-300 p-3 pl-10 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 font-[poppins]"
-                />
-              </div>
-              {/* Email Field */}
-              <div className="mb-4 relative">
-                <label className="block text-gray-700 text-lg font-[poppins] mb-2">
-                  Email
-                </label>
-                <span className="absolute inset-y-0 left-0 flex items-center pl-3">
-                  {/* Envelope Icon */}
-                <img src="/email.jpeg" alt="User Icon" className="h-6 w-6 mt-9" />  
-                </span>
-                <input
-                  type="email"
-                  placeholder="Your Email"
-                  className="w-full border border-gray-300 p-3 pl-10 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 font-[poppins]"
-                />
-              </div>
-              {/* Phone Field */}
-              <div className="mb-4 relative">
-                <label className="block text-gray-700 text-lg font-[poppins] mb-2">
-                  Phone Number
-                </label>
-                <span className="absolute inset-y-0 left-0 flex items-center pl-3">
-                  {/* Phone Icon */}
-                <img src="/phone.webp" alt="User Icon" className="h-6 w-6 mt-9" />  
-                </span>
-                <input
-                  type="tel"
-                  placeholder="Your Phone Number"
-                  className="w-full border border-gray-300 p-3 pl-10 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 font-[poppins]"
-                />
-              </div>
-              {/* Tasks/Details Field */}
-              <div className="mb-6 relative">
-                <label className="block text-gray-700 text-lg font-[poppins] mb-2">
-                  Tasks/Details
-                </label>
-                <span className="absolute top-10 left-0 flex items-center pl-3">
-                  {/* Briefcase Icon */}
-                <img src="/case.webp" alt="User Icon" className="h-7 w-7 mt-1" />  
-                </span>
-                <textarea
-                  placeholder="Describe the tasks you want to delegate"
-                  className="w-full border border-gray-300 p-3 pl-10 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 font-[poppins]"
-                  rows="4"
-                ></textarea>
-              </div>
-              <div>
-                <button
-                  type="submit"
-                  className="w-full bg-blue-600 text-white px-6 py-3 rounded-md font-bold hover:bg-blue-700 transition font-[poppins]"
-                >
-                  Get Free Consultation
-                </button>
-              </div>
-            </form>
+                {/* Name Field */}
+                <div className="mb-4 relative">
+                  <label className="block text-gray-700 text-lg font-[poppins] mb-2">
+                    Name
+                  </label>
+                  <span className="absolute inset-y-0 left-0 flex items-center pl-3">
+                    <img src="/name.png" alt="User Icon" className="h-7 w-7 mt-9" />
+                  </span>
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Your Name"
+                    className="w-full border border-gray-300 p-3 pl-10 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 font-[poppins]"
+                  />
+                </div>
+                {/* Email Field */}
+                <div className="mb-4 relative">
+                  <label className="block text-gray-700 text-lg font-[poppins] mb-2">
+                    Email
+                  </label>
+                  <span className="absolute inset-y-0 left-0 flex items-center pl-3">
+                    <img src="/email.jpeg" alt="User Icon" className="h-6 w-6 mt-9" />  
+                  </span>
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="Your Email"
+                    className="w-full border border-gray-300 p-3 pl-10 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 font-[poppins]"
+                  />
+                </div>
+                {/* Phone Field */}
+                <div className="mb-4 relative">
+                  <label className="block text-gray-700 text-lg font-[poppins] mb-2">
+                    Phone Number
+                  </label>
+                  <span className="absolute inset-y-0 left-0 flex items-center pl-3">
+                    <img src="/phone.webp" alt="User Icon" className="h-6 w-6 mt-9" />  
+                  </span>
+                  <input
+                    type="tel"
+                    name="phone"
+                    placeholder="Your Phone Number"
+                    className="w-full border border-gray-300 p-3 pl-10 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 font-[poppins]"
+                  />
+                </div>
+                {/* Tasks/Details Field */}
+                <div className="mb-6 relative">
+                  <label className="block text-gray-700 text-lg font-[poppins] mb-2">
+                    Tasks/Details
+                  </label>
+                  <span className="absolute top-10 left-0 flex items-center pl-3">
+                    <img src="/case.webp" alt="User Icon" className="h-7 w-7 mt-1" />  
+                  </span>
+                  <textarea
+                    name="details"
+                    placeholder="Describe the tasks you want to delegate"
+                    className="w-full border border-gray-300 p-3 pl-10 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 font-[poppins]"
+                    rows="4"
+                  ></textarea>
+                </div>
+                <div>
+                  <button
+                    type="submit"
+                    className="w-full bg-blue-600 text-white px-6 py-3 rounded-md font-bold hover:bg-blue-700 transition font-[poppins]"
+                  >
+                    Get Free Consultation
+                  </button>
+                </div>
+              </form>
+            )}
           </div>
           {/* Right Column: Sliding Image */}
-          <div className="w-full md:w-2/2 p-4 flex justify-center">
+          <div className="w-full md:w-2/3 p-4 flex justify-center">
             <SlidingImage src="/hire.png" alt="Hire Virtual Assistant" className="w-full max-w-2xl h-auto" />
           </div>
         </div>
       </section>
- 
-
 
       {/* About Section */}
       <section className="py-16 bg-gray-50 relative left-1/2 -translate-x-[49%] w-screen">
         <div className="w-full flex flex-col md:flex-row items-center">
           <div className="md:w-1/2">
-            <h2 className="text-4xl font-bold text-gray-800">Who We Are</h2>
-            <p className="mt-4 text-lg text-gray-600">
+            <h2 className="text-4xl font-[poppins] text-gray-800">Who We Are</h2>
+            <p className="mt-4 text-lg text-black font-[poppins]">
               We blend creativity with technology. Our dedicated team of experts provides integrated digital solutions—from virtual assistance and branding to full‑stack software engineering—to ensure your brand stands out.
             </p>
             <div className="mt-6">
               <Link
                 href="/about"
-                className="inline-block bg-blue-600 text-white px-6 py-3 rounded-md font-semibold hover:bg-blue-700 transition"
+                className="inline-block bg-blue-600 text-white px-6 py-3 rounded-md font-[poppins] hover:bg-blue-700 transition"
               >
                 Learn More About Us
               </Link>
@@ -242,25 +280,25 @@ export default function Home() {
           </div>
           <div className="md:w-1/2 mt-8 md:mt-0">
             <img
-              src="/brand-image.jpg"
+              src="/N.png"
               alt="Brand Forge Agency"
-              className="w-full rounded-lg shadow-md"
+              className="w-full max-h-60 object-contain rounded-lg shadow-md"
             />
           </div>
         </div>
       </section>
 
       {/* Call-to-Action Section */}
-      <section className="py-16 bg-blue-600 relative left-1/2 -translate-x-1/2 w-screen">
+      <section className="py-16 bg-gray-100 relative left-1/2 -translate-x-1/2 w-screen">
         <div className="w-full text-center">
-          <h2 className="text-4xl font-bold text-white">Ready to Elevate Your Brand?</h2>
-          <p className="mt-4 text-lg text-blue-100">
-            Contact us today and let's create something extraordinary together.
+          <h2 className="text-4xl font-[poppins] text-black">Ready to Elevate Your Brand?</h2>
+          <p className="mt-4 text-lg font-[poppins] text-black">
+            Contact us today and let's create something extraordinary together
           </p>
           <div className="mt-8">
             <Link
               href="/contact"
-              className="inline-block bg-white text-blue-600 px-8 py-3 rounded-md font-semibold hover:bg-gray-100 transition"
+              className="inline-block bg-white text-blue-600 px-8 py-3 rounded-md font-[poppins] hover:bg-gray-100 transition"
             >
               Get In Touch
             </Link>
@@ -270,5 +308,3 @@ export default function Home() {
     </>
   );
 }
-
-
