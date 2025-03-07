@@ -6,6 +6,7 @@ import { useState } from "react";
 import Link from 'next/link';
 import SlidingImage from '../components/SlidingImage';
 import { Playfair_Display } from 'next/font/google';
+import StatsSection from '../components/StatsSection';
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
@@ -322,6 +323,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+       {/* Stats Section */}
+       <StatsSection />
     </>
   );
 }
