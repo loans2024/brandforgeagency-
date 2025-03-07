@@ -44,8 +44,8 @@ export default function RootLayout({ children }) {
       <body className="bg-white text-gray-900">
         <Header />
         <main className="w-full">{children}</main>
-        <footer className={`${playfair.className} bg-gray-300 text-black p-4 font-bold text-center`}>
-          © {new Date().getFullYear()} Brand Forge Agency. All rights reserved.
+        <footer className={`${playfair.className} bg-gradient-to-r from-orange-200 via-stone-800 to-neutral-800 text-white p-4 font-bold text-center`}>
+          © {new Date().getFullYear()} Brand Forge Agency. All rights reserved
         </footer>
       </body>
     </html>

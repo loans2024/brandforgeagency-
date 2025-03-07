@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable react/no-unescaped-entities */
 "use client";
+import Image from 'next/image';
 import { useState } from "react";
 import Link from 'next/link';
 import SlidingImage from '../components/SlidingImage';
@@ -38,31 +39,38 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="bg-gray-50 py-16 relative left-1/2 -translate-x-[49%] w-screen">
-        <div className="flex flex-col md:flex-row items-center">
-          {/* Text container with sliding effect on desktops/laptops */}
-          <div className="md:w-1/2 animate-slide-in-left">
-            <h1 className={`${playfair.className} text-5xl md:text-6xl text-black`}>
-              Elevate Your Brand with Digital Excellence
-            </h1>
-            <p className="mt-4 text-xl text-black font-[poppins]">
-              At Brand Forge Agency, we craft comprehensive digital solutions to help your business thrive.
-            </p>
-            <div className="mt-8">
-              <Link
-                href="/services"
-                className={`${playfair.className} inline-block bg-blue-600 text-white px-9 py-3 rounded-md font-bold  hover:bg-blue-700 transition`}
-              >
-                Discover Our Services
-              </Link>
-            </div>
-          </div>
-          {/* Optional Image or Empty Space for layout balance */}
-          <div className="hidden md:block md:w-1/2">
-            {/* Add an image here if desired */}
-          </div>
-        </div>
-      </section>
+<section className="bg-gray-50 py-1 relative left-1/2 -translate-x-[49%] w-screen">
+  <div className="flex flex-col md:flex-row items-center">
+    {/* Left Column: Text */}
+    <div className="md:w-1/2 animate-slide-in-left">
+      <h1 className={`${playfair.className} text-5xl md:text-6xl text-black`}>
+        Elevate Your Brand with Digital Excellence
+      </h1>
+      <p className="mt-4 text-xl text-black font-[poppins]">
+        At Brand Forge Agency, we craft comprehensive digital solutions to help your business thrive.
+      </p>
+      <div className="mt-8">
+        <Link
+          href="/services"
+          className={`${playfair.className} inline-block bg-stone-600 text-white px-9 py-3 rounded-md font-bold hover:bg-neutral-700 transition`}
+        >
+          Discover Our Services
+        </Link>
+      </div>
+    </div>
+    {/* Right Column: Image */}
+    <div className="w-full md:w-2/3">
+      <Image 
+        src="/theme3.jpg" 
+        alt="Theme" 
+        width={1000} 
+        height={100} 
+        className="w-full max-h-[700px] object-contain" 
+      />
+    </div>
+  </div>
+</section>
+
 
       {/* Services Section */}
       <section className="py-16 bg-white relative left-1/2 -translate-x-1/2 w-screen">
@@ -73,63 +81,63 @@ export default function Home() {
           </p>
           <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Social Media Management */}
-            <div className="bg-gray-700 p-6 rounded-lg shadow-md hover:shadow-xl transition">
+            <div className="bg-stone-700 p-6 rounded-lg shadow-md hover:shadow-xl transition">
               <h3 className={`${playfair.className} text-3xl text-white`}>Social Media Management</h3>
               <p className="mt-2 text-white font-[poppins] text-1xl">
                 Boost your online presence and engage your audience across platforms
               </p>
             </div>
             {/* Graphic Design */}
-            <div className="bg-gray-700 p-6 rounded-lg shadow-md hover:shadow-xl transition">
+            <div className="bg-neutral-800 p-6 rounded-lg shadow-md hover:shadow-xl transition">
               <h3 className={`${playfair.className} text-3xl text-white`}>Graphic Design</h3>
               <p className="mt-2 text-white font-[poppins] text-1xl">
                 Transform your brand identity with innovative visual designs.
               </p>
             </div>
             {/* Video Editing */}
-            <div className="bg-gray-700 p-6 rounded-lg shadow-md hover:shadow-xl transition">
+            <div className="bg-gradient-to-r from-stone-700 to-neutral-900 p-6 rounded-lg shadow-md hover:shadow-xl transition">
               <h3 className={`${playfair.className} text-3xl text-white`}>Video Editing</h3>
               <p className="mt-2 text-white font-[poppins] text-1xl">
                 Enhance your visual content with professional video editing.
               </p>
             </div>
             {/* Reels Creation */}
-            <div className="bg-gray-700 p-6 rounded-lg shadow-md hover:shadow-xl transition">
+            <div className="bg-stone-700 p-6 rounded-lg shadow-md hover:shadow-xl transition">
               <h3 className={`${playfair.className} text-3xl text-white`}>Reels Creation</h3>
               <p className="mt-2 text-white font-[poppins] text-1xl">
                 Create engaging short-form videos to capture your audience’s attention.
               </p>
             </div>
             {/* Content Creation */}
-            <div className="bg-gray-700 p-6 rounded-lg shadow-md hover:shadow-xl transition">
+            <div className="bg-neutral-800 p-6 rounded-lg shadow-md hover:shadow-xl transition">
               <h3 className={`${playfair.className} text-3xl text-white`}>Content Creation</h3>
               <p className="mt-2 text-white font-[poppins] text-1xl">
                 Develop compelling content tailored to build trust and authority.
               </p>
             </div>
             {/* Copy Writing */}
-            <div className="bg-gray-700 p-6 rounded-lg shadow-md hover:shadow-xl transition">
+            <div className="bg-gradient-to-r from-stone-700 to-neutral-900 p-6 rounded-lg shadow-md hover:shadow-xl transition">
               <h3 className={`${playfair.className} text-3xl text-white`}>Copy Writing</h3>
               <p className="mt-2 text-white font-[poppins] text-1xl">
                 Craft persuasive copy that elevates your brand and drives conversions.
               </p>
             </div>
             {/* Community Engagement */}
-            <div className="bg-gray-700 p-6 rounded-lg shadow-md hover:shadow-xl transition">
+            <div className="bg-stone-700 p-6 rounded-lg shadow-md hover:shadow-xl transition">
               <h3 className={`${playfair.className} text-3xl text-white`}>Community Engagement</h3>
               <p className="mt-2 text-white font-[poppins] text-1xl">
                 Build strong relationships with your audience through active engagement.
               </p>
             </div>
             {/* Strategy & Growth */}
-            <div className="bg-gray-700 p-6 rounded-lg shadow-md hover:shadow-xl transition">
+            <div className="bg-neutral-800 p-6 rounded-lg shadow-md hover:shadow-xl transition">
               <h3 className={`${playfair.className} text-3xl text-white`}>Strategy & Growth</h3>
               <p className="mt-2 text-white font-[poppins] text-1xl">
                 Implement data-driven strategies to accelerate your business growth.
               </p>
             </div>
             {/* Software Engineering */}
-            <div className="bg-gray-700 p-6 rounded-lg shadow-md hover:shadow-xl transition">
+            <div className="bg-gradient-to-r from-stone-700 to-neutral-900 p-6 rounded-lg shadow-md hover:shadow-xl transition">
               <h3 className={`${playfair.className} text-3xl text-white`}>Software Engineering</h3>
               <p className="mt-2 text-white font-[poppins] text-1xl">
                 Develop robust and scalable software solutions tailored to your needs.
@@ -140,7 +148,7 @@ export default function Home() {
       </section>
 
       {/* Hire a Virtual Assistant Form */}
-      <section className="py-1 bg-gray-100 w-screen mx-0">
+      <section className="py-1 bg-gradient-to-r from-orange-100 via-stone-500 to-neutral-300 w-screen mx-0">
         <div className="w-full flex flex-col md:flex-row items-center">
           {/* Left Column: Form */}
           <div className="w-full md:w-1/2 p-4">
@@ -255,7 +263,7 @@ export default function Home() {
                 <div>
                   <button
                     type="submit"
-                    className={`${playfair.className} w-full bg-blue-600 text-white px-6 py-3 rounded-md font-bold hover:bg-blue-700 transition`}
+                    className={`${playfair.className} w-full bg-stone-700 text-white px-6 py-3 rounded-md font-bold hover:bg-neutral-700 transition`}
                   >
                     Get Free Consultation
                   </button>
@@ -281,13 +289,13 @@ export default function Home() {
             <div className="mt-6">
               <Link
                 href="/about"
-                className={`${playfair.className} inline-block bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700 transition`}
+                className={`${playfair.className} inline-block bg-stone-700 text-white px-6 py-3 rounded-md hover:bg-neutral-600 transition`}
               >
                 Learn More About Us
               </Link>
             </div>
           </div>
-          <div className="md:w-1/2 mt-8 md:mt-0">
+          <div className="md:w-1/2 mt-8 md:mt-0 bg-gradient-to-r from-orange-200 via-stone-800 to-neutral-800">
             <img
               src="/n.png"
               alt="Brand Forge Agency"
@@ -298,7 +306,7 @@ export default function Home() {
       </section>
 
       {/* Call-to-Action Section */}
-      <section className="py-16 bg-gray-100 relative left-1/2 -translate-x-1/2 w-screen">
+      <section className="py-1 bg-white relative left-1/2 -translate-x-1/2 w-screen">
         <div className="w-full text-center">
           <h2 className={`${playfair.className} text-4xl text-black`}>Ready to Elevate Your Brand?</h2>
           <p className="mt-4 text-lg font-[poppins] text-black">
@@ -307,7 +315,7 @@ export default function Home() {
           <div className="mt-8">
             <Link
               href="/contact"
-              className={`${playfair.className} inline-block bg-white text-blue-600 px-8 py-3  hover:bg-gray-100 transition`}
+              className={`${playfair.className} inline-block bg-stone-700 text-white  px-8 py-3  hover:bg-neutral-700 transition`}
             >
               Get In Touch
             </Link>

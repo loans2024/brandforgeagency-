@@ -14,11 +14,11 @@ export default function Header() {
   const toggleMenu = () => setMenuOpen(!menuOpen);
 
   return (
-    <header className="bg-gray-100 text-black p-5">
+    <header className="bg-gradient-to-r from-orange-200 via-stone-800 to-neutral-800 text-white p-3">
       <nav className="w-full flex justify-between items-center">
         <div className="flex items-center text-xl font-bold font-poppins">
-          <Image src="/n.png" alt="Logo" width={35} height={29} priority unoptimized className="mr-2"/>  
-          <Link href="/" className={`${playfair.className} text-xl font-bold`}>
+          <Image src="/n.png" alt="Logo" width={36} height={29} priority unoptimized className="mr-2"/>  
+          <Link href="/" className={`${playfair.className} text-xl font-bold text-black`}>
           Brand Forge Agency
           </Link>
   
@@ -67,24 +67,24 @@ export default function Header() {
       {/* Mobile Navigation */}
       {menuOpen && (
         <div className="md:hidden mt-3 bg-black-50 p-3 rounded-lg shadow-lg -mx-5">
-          <ul className="flex flex-col space-y-3 font-poppins">
-            <li className="p-3 bg-gray-200 rounded">
-              <Link href="/" className="block hover:underline">Home</Link>
+          <ul className={`${playfair.className}"flex flex-col font-bold space-y-3`}>
+            <li className="p-2 bg-stone-500 rounded text-black">
+              <Link href="/" className="block hover:underline">HOME</Link>
             </li>
-            <li className="p-2 bg-gray-200 rounded">
-              <Link href="/about" className="block hover:underline">About</Link>
+            <li className="p-2 bg-stone-500 rounded text-black">
+              <Link href="/about" className="block hover:underline">ABOUT</Link>
             </li>
-            <li className="p-2 bg-gray-200 rounded">
-              <Link href="/services" className="block hover:underline">Services</Link>
+            <li className="p-2 bg-stone-500 rounded text-black">
+              <Link href="/services" className="block hover:underline">SERVICES</Link>
             </li>
-            <li className="p-2 bg-gray-200 rounded">
-              <Link href="/the-team" className="block hover:underline">The Team</Link>
+            <li className="p-2 bg-stone-500 rounded text-black">
+              <Link href="/the-team" className="block hover:underline">THE TEAM</Link>
             </li>
-            <li className="p-2 bg-gray-200 rounded">
-              <Link href="/blog" className="block hover:underline">Blog</Link>
+            <li className="p-2 bg-stone-500 rounded text-black">
+              <Link href="/blog" className="block hover:underline">BLOG</Link>
             </li>
-            <li className="p-2 bg-gray-200 rounded">
-              <Link href="/contact" className="block hover:underline">Contact</Link>
+            <li className="p-2 bg-stone-500 rounded text-black">
+              <Link href="/contact" className="block hover:underline">CONTACT</Link>
             </li>
           </ul>
         </div>
