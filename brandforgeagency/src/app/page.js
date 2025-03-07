@@ -61,11 +61,11 @@ export default function Home() {
     {/* Right Column: Image */}
     <div className="w-full md:w-2/3">
       <Image 
-        src="/theme3.jpg" 
+        src="/theme.jpeg" 
         alt="Theme" 
-        width={1000} 
-        height={100} 
-        className="w-full max-h-[700px] object-contain" 
+        width={100} 
+        height={100} priority unoptimized
+        className="w-full max-h-[900px] object-covern" 
       />
     </div>
   </div>
@@ -73,7 +73,7 @@ export default function Home() {
 
 
       {/* Services Section */}
-      <section className="py-16 bg-white relative left-1/2 -translate-x-1/2 w-screen">
+      <section className="py-1 bg-white relative left-1/2 -translate-x-1/2 w-screen">
         <div className="w-full">
           <h2 className={`${playfair.className} text-5xl md:text-1xl text-black text-center`}>Our Expertise</h2>
           <p className="mt-4 text-center text-black font-[poppins] text-2xl">
