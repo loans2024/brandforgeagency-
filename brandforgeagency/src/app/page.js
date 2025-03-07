@@ -65,7 +65,7 @@ export default function Home() {
         alt="Theme" 
         width={100} 
         height={100} priority unoptimized
-        className="w-full max-h-[900px] object-covern" 
+        className="w-full max-h-[700px] object-covern" 
       />
     </div>
   </div>
