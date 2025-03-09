@@ -149,12 +149,12 @@ export default function Home() {
       </section>
 
       {/* Hire a Virtual Assistant Form */}
-      <section className="py-1 bg-gradient-to-r from-orange-100 via-stone-500 to-neutral-300 w-screen mx-0">
+      <section id="contact" className="py-1 bg-gradient-to-r from-orange-100 via-stone-500 to-neutral-300 w-screen mx-0">
         <div className="w-full flex flex-col md:flex-row items-center">
           {/* Left Column: Form */}
           <div className="w-full md:w-1/2 p-4">
             <h2 className={`${playfair.className} text-3xl text-black`}>
-              Hire Us!
+              Contact Us!
             </h2>
             {submitted ? (
               <div className="w-full max-w-2xl bg-white p-2 rounded-lg shadow-md text-center">
@@ -315,7 +315,7 @@ export default function Home() {
           </p>
           <div className="mt-8">
             <Link
-              href="/contact"
+              href="/#contact"
               className={`${playfair.className} inline-block bg-stone-700 text-white  px-8 py-3  hover:bg-neutral-700 transition`}
             >
               Get In Touch

@@ -16,11 +16,11 @@ export const metadata = {
     title: 'Brand Forge Agency - Digital Solutions',
     description:
       'Leading agency offering comprehensive digital solutions to elevate your brand.',
-    url: 'https://yourdomain.com',
+    url: 'https://brandforgeagency.netlify.app/',
     siteName: 'Brand Forge Agency',
     images: [
       {
-        url: 'https://yourdomain.com/og-image.jpg',
+        url: 'https://brandforgeagency.netlify.app/og-image.jpg',
         width: 800,
         height: 600,
       },
@@ -33,7 +33,7 @@ export const metadata = {
     title: 'Brand Forge Agency - Digital Solutions',
     description:
       'Top-notch digital solutions including social media management, graphic design, video editing, and more.',
-    images: ['https://yourdomain.com/twitter-image.jpg'],
+    images: ['https://brandforgeagency.netlify.app/twitter-image.jpg'],
   },
 };
 
