@@ -29,7 +29,7 @@ const services = [
     title: "Copy Writing",
     description:
       "Craft persuasive and creative copy that elevates your brand and drives conversions.",
-    asset: "/contentW.mp4", // video asset
+    asset: "/contentW.mp4", 
     extra:
       "Engage your audience with SEO-optimized copywriting that boosts visibility and drives sales. We create compelling website content, blog articles, ad copy, product descriptions, and email marketing that captivate readers and enhance brand storytelling. Turn visitors into loyal customers with conversion-focused, high-quality content. Let’s tell your story!",
   },
@@ -37,7 +37,7 @@ const services = [
     title: "Reels Creation",
     description:
       "Create engaging short videos to capture your audience’s attention and boost interaction.",
-    asset: "/reels.mp4", // video asset
+    asset: "/reels.mp4",
     extra:
       "Boost your brand with high-quality Reels and short-form videos for Instagram, TikTok, YouTube Shorts, and Facebook. Our video editing, trend-driven content, and storytelling techniques help increase engagement, reach, and brand awareness. Elevate your social media presence with eye-catching, viral-ready video content. Let’s make your brand go viral!",
   },
@@ -61,7 +61,7 @@ const services = [
     title: "Strategy & Growth",
     description:
       "Implement data-driven strategies that accelerate growth and expand your digital footprint.",
-    asset: "/growth.mp4", // video asset
+    asset: "/growth.mp4", 
     extra:
       "Scale your business with growth-focused digital strategies that drive brand awareness, engagement, and conversions. We specialize in SEO optimization, social media marketing, paid ads, content strategy, and audience analytics to maximize your online presence. Unlock new opportunities with targeted, results-driven marketing solutions. Let’s fuel your brand’s success!",
   },
