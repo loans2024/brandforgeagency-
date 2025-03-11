@@ -61,6 +61,26 @@ export default function ServicesPage() {
         <ServiceCards />
       </section>
 
+      {/* Blog Section */}
+      <section className="py-16 bg-stone-500 w-screen">
+        <div className="w-screen mx-auto px-4 text-center">
+          <h2 className={`${playfair.className} text-4xl text-white mb-8`}>
+            Explore Our Blog
+          </h2>
+          <p className="text-lg text-black font-[poppins]">
+            Stay updated with the latest insights, trends, and strategies in the digital world. Our blog covers expert tips, industry news, and creative inspiration to help you grow.
+          </p>
+          <div className="mt-8">
+            <Link
+              href="/blog"
+              className={`${playfair.className} inline-block bg-stone-700 text-white px-8 py-3 rounded-md font-bold hover:bg-neutral-700 transition`}
+            >
+              Read Our Blog
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Additional Services Section */}
       <section className="py-16 bg-white w-screen">
         <div className="w-screen mx-auto px-4 text-center">
