@@ -26,15 +26,16 @@ export default function BlogPage() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gray-100 py-10 w-screen">
+    
       <div className="w-screen bg-white shadow-lg rounded-none">
         {/* Blog Header */}
-        <div className="relative w-full h-80 md:h-96 lg:h-[50px] overflow-hidden">
+        <div className="relative w-screen h-[300px] bg-black flex justify-center items-center">
+          
           <Image
-            src="/blog/social-media-growth.jpg"
+            src="/Blog.png"
             alt="How Social Media Management Can Elevate Your Brand"
             layout="fill"
-            objectFit="cover"
+            objectFit="contain"
             className="rounded-t-2xl"
           />
         </div>
@@ -143,7 +144,7 @@ Partnering with a professional social media marketing agency like BrandForge Age
           </article>
         </div>
       </div>
-    </div>
+    
   );
 }
 
