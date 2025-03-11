@@ -1,7 +1,7 @@
-
 const nextConfig = {
-    devIndicators: false,
-  };
-  
-  export default nextConfig;
-  
+  images: {
+    unoptimized: true, // Disable Next.js image optimization
+  },
+};
+
+export default nextConfig;
