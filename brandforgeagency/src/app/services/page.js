@@ -61,7 +61,7 @@ export default function ServicesPage() {
           </p>
           <div className="mt-8">
             <Link
-              href="/#blog"
+              href="/blog"
               className={`${playfair.className} inline-block bg-stone-700 text-white px-8 py-3 rounded-md font-bold hover:bg-neutral-700 transition`}
             >
               Read Our Blog
