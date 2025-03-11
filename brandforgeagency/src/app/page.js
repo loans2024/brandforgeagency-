@@ -2,7 +2,7 @@
 /* eslint-disable react/no-unescaped-entities */
 "use client";
 import Image from 'next/image';
-import { useState } from "react";
+import { useState, useEffect} from "react";
 import Link from 'next/link';
 import SlidingImage from '../components/SlidingImage';
 import { Playfair_Display } from 'next/font/google';
@@ -14,7 +14,22 @@ const playfair = Playfair_Display({
 });
 
 export default function Home() {
+
   const [submitted, setSubmitted] = useState(false);
+  useEffect(() => {
+    // Function to disable copy, text selection, and right-click
+    const disableCopy = (event) => event.preventDefault();
+    document.addEventListener("contextmenu", disableCopy);
+    document.addEventListener("selectstart", disableCopy);
+    document.addEventListener("copy", disableCopy);
+
+    // Cleanup function to remove event listeners when component unmounts
+    return () => {
+      document.removeEventListener("contextmenu", disableCopy);
+      document.removeEventListener("selectstart", disableCopy);
+      document.removeEventListener("copy", disableCopy);
+    };
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();

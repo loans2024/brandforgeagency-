@@ -1,35 +1,10 @@
+/* eslint-disable @next/next/no-img-element */
+"use client";
 import { Playfair_Display } from "next/font/google";
+import { useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import ServiceCards from "../../components/ServiceCards"; // Import directly
-
-export const metadata = {
-  title: 'Brand Forge Agency - Digital Services',
-  description:
-    'Discover innovative digital solutions including social media management, graphic design, copy writing, reels creation, content creation, community engagement, strategy & growth, and software engineering.',
-  openGraph: {
-    title: 'Brand Forge Agency - Digital Services',
-    description:
-      'Elevate your brand with our cutting-edge digital services that drive growth and inspire creativity.',
-    url: 'https://brandforgeagency.netlify.app/services',
-    images: [
-      {
-        url: 'https://brandforgeagency.netlify.app/og-services.jpg',
-        width: 1200,
-        height: 630,
-      },
-    ],
-    locale: 'en_US',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Brand Forge Agency - Digital Services',
-    description:
-      'Elevate your brand with our innovative digital solutions.',
-    images: ['https://brandforgeagency.netlify.app/twitter-services.jpg'],
-  },
-};
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
@@ -37,6 +12,20 @@ const playfair = Playfair_Display({
 });
 
 export default function ServicesPage() {
+  useEffect(() => {
+        // Function to disable text selection, right-click, and copy
+        const disableCopy = (event) => event.preventDefault();
+        document.addEventListener("contextmenu", disableCopy);
+        document.addEventListener("selectstart", disableCopy);
+        document.addEventListener("copy", disableCopy);
+    
+        // Cleanup function
+        return () => {
+          document.removeEventListener("contextmenu", disableCopy);
+          document.removeEventListener("selectstart", disableCopy);
+          document.removeEventListener("copy", disableCopy);
+        };
+      }, []);
   return (
     <>
       {/* Hero Section */}

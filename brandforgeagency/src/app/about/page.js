@@ -1,6 +1,6 @@
 "use client";
+import { useEffect } from "react";
 import ProcessSlider from "../../components/ProcessSlider";
-
 import Image from "next/image";
 import Link from "next/link";
 import { Playfair_Display } from "next/font/google";
@@ -11,6 +11,22 @@ const playfair = Playfair_Display({
 });
 
 export default function AboutPage() {
+    useEffect(() => {
+      // Function to disable text selection, right-click, and copy
+      const disableCopy = (event) => event.preventDefault();
+      document.addEventListener("contextmenu", disableCopy);
+      document.addEventListener("selectstart", disableCopy);
+      document.addEventListener("copy", disableCopy);
+  
+      // Cleanup function
+      return () => {
+        document.removeEventListener("contextmenu", disableCopy);
+        document.removeEventListener("selectstart", disableCopy);
+        document.removeEventListener("copy", disableCopy);
+      };
+    }, []);
+  
+  
   return (
     <>
       {/* Hero Section */}
