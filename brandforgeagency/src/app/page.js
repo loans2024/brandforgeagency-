@@ -169,12 +169,12 @@ export default function Home() {
           {/* Left Column: Form */}
           <div className="w-full md:w-1/2 p-4">
             <h2 className={`${playfair.className} text-3xl text-black`}>
-              Contact Us!
+              TALK TO US!
             </h2>
             {submitted ? (
               <div className="w-full max-w-2xl bg-white p-2 rounded-lg shadow-md text-center">
                 <h2 className="text-2xl font-bold text-blue-900">Thank You!</h2>
-                <p className="mt-4 text-lg text-black font-[poppins]">
+                <p className={`${playfair.className} mt-4 text-lg text-black font-bold`}>
                   Your submission has been received.
                 </p>
               </div>
@@ -196,7 +196,7 @@ export default function Home() {
                     </span>
                     <select 
                       name="role"
-                      className="w-full border border-gray-300 p-3 pl-10 rounded-md appearance-none focus:outline-none focus:ring-2 focus:ring-blue-500 font-[poppins]"
+                      className={`${playfair.className} w-full border border-gray-300 p-3 pl-10 rounded-md appearance-none focus:outline-none focus:ring-2 focus:ring-blue-500 font-bold`}
                     >
                       <option>Virtual Assistant</option>
                       <option>Social Media Management</option>
@@ -218,7 +218,7 @@ export default function Home() {
                 </div>
                 {/* Name Field */}
                 <div className="mb-4 relative">
-                  <label className="block text-gray-700 text-lg font-[poppins] mb-2">
+                  <label className={`${playfair.className} block text-gray-700 text-lg font-[poppins] mb-2`}>
                     Name
                   </label>
                   <span className="absolute inset-y-0 left-0 flex items-center pl-3">
@@ -228,12 +228,12 @@ export default function Home() {
                     type="text"
                     name="name"
                     placeholder="Your Name"
-                    className="w-full border border-gray-300 p-3 pl-10 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 font-[poppins]"
+                    className={`${playfair.className} w-full border border-gray-300 p-3 pl-10 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500`}
                   />
                 </div>
                 {/* Email Field */}
                 <div className="mb-4 relative">
-                  <label className="block text-gray-700 text-lg font-[poppins] mb-2">
+                  <label className={`${playfair.className} block text-black text-lg font-bold mb-2`}>
                     Email
                   </label>
                   <span className="absolute inset-y-0 left-0 flex items-center pl-3">
@@ -243,12 +243,12 @@ export default function Home() {
                     type="email"
                     name="email"
                     placeholder="Your Email"
-                    className="w-full border border-gray-300 p-3 pl-10 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 font-[poppins]"
+                    className={`${playfair.className} w-full border border-gray-300 p-3 pl-10 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 font-bold`}
                   />
                 </div>
                 {/* Phone Field */}
                 <div className="mb-4 relative">
-                  <label className="block text-gray-700 text-lg font-[poppins] mb-2">
+                  <label className={`${playfair.className} block text-black text-lg font-[poppins] mb-2`}>
                     Phone Number
                   </label>
                   <span className="absolute inset-y-0 left-0 flex items-center pl-3">
@@ -258,12 +258,12 @@ export default function Home() {
                     type="tel"
                     name="phone"
                     placeholder="Your Phone Number"
-                    className="w-full border border-gray-300 p-3 pl-10 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 font-[poppins]"
+                    className={`${playfair.className} w-full border border-gray-300 p-3 pl-10 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 font-bold`}
                   />
                 </div>
                 {/* Tasks/Details Field */}
                 <div className="mb-6 relative">
-                  <label className="block text-gray-700 text-lg font-[poppins] mb-2">
+                  <label className={`${playfair.className} block text-black text-lg font-bold mb-2`}>
                     Tasks/Details
                   </label>
                   <span className="absolute top-10 left-0 flex items-center pl-3">
@@ -272,7 +272,7 @@ export default function Home() {
                   <textarea
                     name="details"
                     placeholder="Describe the tasks you want to delegate"
-                    className="w-full border border-gray-300 p-3 pl-10 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 font-[poppins]"
+                    className={`${playfair.className} w-full border border-gray-300 p-3 pl-10 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 font-bold`}
                     rows="4"
                   ></textarea>
                 </div>
