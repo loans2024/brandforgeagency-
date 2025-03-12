@@ -160,8 +160,17 @@ export default function Home() {
               </p>
             </div>
           </div>
-        </div>
-      </section>
+            {/* "Meet The Team" Button */}
+            <div className="mt-12 flex justify-center">
+                <Link
+                   href="/the-team"
+                className={`${playfair.className} inline-block bg-stone-700 text-white px-8 py-3 rounded-md font-bold hover:bg-neutral-700 transition shadow-lg`}
+                >
+                  Meet Our Team
+              </Link>
+            </div>
+           </div>
+        </section>
 
       {/* Hire a Virtual Assistant Form */}
       <section id="contact" className="py-1 bg-gradient-to-r from-orange-100 via-stone-500 to-neutral-300 w-screen mx-0">
@@ -216,6 +225,7 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
+                
                 {/* Name Field */}
                 <div className="mb-4 relative">
                   <label className={`${playfair.className} block text-gray-700 text-lg font-[poppins] mb-2`}>
