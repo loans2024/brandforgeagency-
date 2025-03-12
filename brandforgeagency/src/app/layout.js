@@ -37,7 +37,7 @@ export const metadata = {
     images: ['https://brandforgeagency.netlify.app/twitter-image.jpg'],
   },
   icons: {
-    icon: '/n.png', // ✅ Added favicon support
+    icon: '/favicon.ico', // ✅ Added favicon support
   },
 };
 
