@@ -22,7 +22,7 @@ export default function Header() {
     <header className="bg-gradient-to-r from-orange-200 via-stone-800 to-neutral-800 text-white p-3 sticky top-0 z-50">
       <nav className="w-full flex justify-between items-center">
         <div className="flex items-center text-xl font-bold font-poppins">
-          <Image src="/n.png" alt="Logo" width={36} height={29} priority unoptimized className="mr-2"/>  
+          <Image src="/favicon.ico" alt="Logo" width={36} height={29} priority unoptimized className="mr-2"/>  
           <Link href="/" className={`${playfair.className} text-xl font-bold text-black`}>
             Brand Forge Agency
           </Link>
