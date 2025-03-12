@@ -1,12 +1,12 @@
 // src/app/layout.js
 import { Playfair_Display } from 'next/font/google';
+import './globals.css';
+import Header from '../components/Header';
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
   weight: ['400', '700'], // or whichever weights you need
 });
-import './globals.css';
-import Header from '../components/Header';
 
 export const metadata = {
   title: 'Brand Forge Agency',
@@ -26,6 +26,7 @@ export const metadata = {
       },
     ],
     locale: 'en_US',
+    alternateLocales: ['en_GB', 'en_CA', 'fr_CA'], // UK, Canada, French Canada
     type: 'website',
   },
   twitter: {
@@ -35,12 +36,20 @@ export const metadata = {
       'Top-notch digital solutions including social media management, graphic design, video editing, and more.',
     images: ['https://brandforgeagency.netlify.app/twitter-image.jpg'],
   },
+  icons: {
+    icon: '/n.png', // ✅ Added favicon support
+  },
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <head />
+      <head>
+        {/* ✅ Add Favicon */}
+        <link rel="icon" type="image/png" href="/n.png" sizes="32x32" />
+        <link rel="apple-touch-icon" href="/n.png" />
+        <meta name="theme-color" content="#000000" />
+      </head>
       <body className="bg-white text-gray-900">
         <Header />
         <main className="w-full">{children}</main>
@@ -51,3 +60,4 @@ export default function RootLayout({ children }) {
     </html>
   );
 }
+
